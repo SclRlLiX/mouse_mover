@@ -1,15 +1,9 @@
-from pynput.mouse import Button, Controller 
+import pyautogui
 import time 
 
-mouse = Controller()
+
 
 starttime=time.time()
-changePosition = 1
 while True: 
-    if changePosition == 1: 
-        mouse.position = (1000,1000)
-        changePosition = 0
-    elif changePosition == 0: 
-        mouse.position = (500,500)
-        changePosition = 1
-    time.sleep(600.0 - ((time.time() - starttime) % 600.0))
+    pyautogui.moveRel(10,10, duration=2)
+    time.sleep(300.0 - ((time.time() - starttime) % 300.0))
